@@ -1,6 +1,7 @@
 // practice2 참고 영상을 보고 만든 예제임
 // 기존 redux와 다를 수 있음.
 
+// 강의 영상에선 Reducer / action, action 생성자를 별도의 폴더로 관리함.
 export interface NotesState {
     notes: string[];
 }
