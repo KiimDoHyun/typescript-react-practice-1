@@ -9,6 +9,7 @@ function App() {
                 <Link to={"/"}>Home</Link>
                 <Link to={"/page1"}>Page1</Link>
                 <Link to={"/page2"}>Page2</Link>
+                <Link to={"/Practice1"}>Practice1</Link>
             </header>
             <Router />
         </div>
