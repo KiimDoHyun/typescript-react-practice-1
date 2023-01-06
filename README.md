@@ -4,14 +4,20 @@
 리덕스
 를 타입스크립트 환경에서 연습하기 위한 예제
 
-환경설정 참고
-https://react.vlpt.us/using-typescript/05-ts-redux.html
-https://github.com/typescript-cheatsheets/react
+### 환경설정
 
-Practice1 참고
-React + typescript
-https://www.youtube.com/watch?v=z8lDwLKthr8&t=488s
+[환경설정 참고 1](https://react.vlpt.us/using-typescript/05-ts-redux.html)
 
-Practice2 참고
-React + typescript + redux
-https://www.youtube.com/watch?v=WpvIihorarA
+[환경설정 참고 2](https://github.com/typescript-cheatsheets/react)
+
+### 예제
+
+[Practice1 참고](https://www.youtube.com/watch?v=z8lDwLKthr8&t=488s)
+
+-   React + typescript
+-   기존 리액트에 타입스크립트 적용 연습
+
+[Practice2 참고](https://www.youtube.com/watch?v=WpvIihorarA)
+
+-   React + typescript + redux
+-   타입스크립트 환경에서 리덕스 적용 연습(기존 Redux 개념, 사용방법 복습)

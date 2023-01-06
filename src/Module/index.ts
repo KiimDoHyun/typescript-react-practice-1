@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
 import CountReducer from "./counter";
 import ListReducer from "./list";
+import { noteReducer } from "./note";
 
 const rootReducer = combineReducers({
     CountReducer,
     ListReducer,
+    noteReducer,
 });
 
 export default rootReducer;
