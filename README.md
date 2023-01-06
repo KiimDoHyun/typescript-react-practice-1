@@ -6,3 +6,6 @@
 
 환경설정 참고
 https://react.vlpt.us/using-typescript/05-ts-redux.html
+
+Practice1 참고
+https://www.youtube.com/watch?v=z8lDwLKthr8&t=488s
