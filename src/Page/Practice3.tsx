@@ -1,4 +1,10 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
+import styled from "styled-components";
+import { getGitCommitApi } from "../api/git";
+import useAxios from "../Hook/useAxios";
+
+const USER = "KiimDoHyun";
+const REPO = "KiimDoHyun-portfolio_window";
 
 const Practice3 = () => {
     /*
@@ -8,14 +14,44 @@ const Practice3 = () => {
 
     출력
     */
+    const [{ data, error, isLoading }, getCommit, bb] =
+        useAxios(getGitCommitApi);
+    // const [gitCommitResult, getCommit, bb] = useAxios(getGitCommitApi);
+
+    const onClickGetCommitButton = useCallback(() => {
+        getCommit({
+            user: USER,
+            repo: REPO,
+        });
+    }, []);
+
+    // useEffect(() => {
+    //     const myFunc = (body: object) => {
+    //         console.log("body: ", body);
+    //     };
+
+    //     myFunc({ value: 1 });
+    //     myFunc({ value123: 1 });
+    // }, []);
+
+    // useEffect(() => {
+    //     console.log("gitCommitResult :", gitCommitResult);
+    // }, [gitCommitResult]);
+
     return (
-        <div>
+        <Practice3Box>
             <div>
-                <button>조회하기</button>
+                <button onClick={onClickGetCommitButton}>조회하기</button>
             </div>
-            <div>리스트</div>
-        </div>
+            <div className="ListArea">
+                {isLoading && <div>Loading...</div>}
+                {error && <div>데이터 조회 에러 발생</div>}
+                {data && <div className="ListArea">리스트 조회</div>}
+            </div>
+        </Practice3Box>
     );
 };
+
+const Practice3Box = styled.div``;
 
 export default Practice3;

@@ -4,9 +4,19 @@ import { AxiosResponse } from "axios";
 import { GitCommitResponse } from "../api/git";
 
 // body,
+
 const useAxios = (
-    initialApi: (user: string, repo: string) => Promise<AxiosResponse<any>>
-) => {
+    initialApi: (body: object) => Promise<AxiosResponse<any>>
+): [
+    state: {
+        apiResponse: object | null;
+        data: object | null;
+        error: object | null;
+        isLoading: boolean;
+    },
+    getData: (body_input: object) => void,
+    changeApi: (inputApi: any) => void
+] => {
     const [state, setState] = useState({
         apiResponse: null,
         data: null,
