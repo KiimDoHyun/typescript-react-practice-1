@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect } from "react";
 import styled from "styled-components";
 import { getGitCommitApi } from "../api/git";
+import GetCommitButton from "../Component/Practice3/GetCommitButton";
+import Practice3ListArea from "../Component/Practice3/Practice3ListArea";
 import useAxios from "../Hook/useAxios";
 
 const USER = "KiimDoHyun";
@@ -14,8 +16,7 @@ const Practice3 = () => {
 
     출력
     */
-    const [{ data, error, isLoading }, getCommit, bb] =
-        useAxios(getGitCommitApi);
+    const [{ data, error, isLoading }, getCommit] = useAxios(getGitCommitApi);
     // const [gitCommitResult, getCommit, bb] = useAxios(getGitCommitApi);
 
     const onClickGetCommitButton = useCallback(() => {
@@ -25,29 +26,25 @@ const Practice3 = () => {
         });
     }, []);
 
-    // useEffect(() => {
-    //     const myFunc = (body: object) => {
-    //         console.log("body: ", body);
-    //     };
+    /*
+    조회 로직과 state가 이 위치에 모두 존재한다
 
-    //     myFunc({ value: 1 });
-    //     myFunc({ value123: 1 });
-    // }, []);
+    버튼 영역은 state가 변경됨에 따라 리렌더링이 발생할 필요가 없다
+     단순 조회 트리거의 역할만 하기 때문
 
-    // useEffect(() => {
-    //     console.log("gitCommitResult :", gitCommitResult);
-    // }, [gitCommitResult]);
-
+    실제 데이터를 다루는건 리스트 출력 영역에 해당한다.
+    */
     return (
         <Practice3Box>
-            <div>
-                <button onClick={onClickGetCommitButton}>조회하기</button>
-            </div>
-            <div className="ListArea">
-                {isLoading && <div>Loading...</div>}
-                {error && <div>데이터 조회 에러 발생</div>}
-                {data && <div className="ListArea">리스트 조회</div>}
-            </div>
+            {/* 조회 버튼 영역 */}
+            <GetCommitButton onClick={onClickGetCommitButton} />
+
+            {/* 리스트 영역 */}
+            <Practice3ListArea
+                data={data}
+                error={error}
+                isLoading={isLoading}
+            />
         </Practice3Box>
     );
 };

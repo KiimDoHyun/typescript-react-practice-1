@@ -10,7 +10,7 @@ const useAxios = (
 ): [
     state: {
         apiResponse: object | null;
-        data: object | null;
+        data: any[] | null;
         error: object | null;
         isLoading: boolean;
     },
