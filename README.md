@@ -31,3 +31,4 @@ Practice3
 
 -   타입스크립트 환경에서 api 처리
 -   api: Git commit
+-   api 결과값의 type 처리?
