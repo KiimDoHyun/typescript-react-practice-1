@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { useCallback } from "react";
+import { AxiosResponse } from "axios";
+import { GitCommitResponse } from "../api/git";
 
 // body,
 const useAxios = (
-    initialApi: (user: string, repo: string) => Promise<AxiosResponse<any, any>>
+    initialApi: (user: string, repo: string) => Promise<AxiosResponse<any>>
 ) => {
     const [state, setState] = useState({
         apiResponse: null,
@@ -25,7 +27,7 @@ const useAxios = (
 
     // 데이터를 가져올 함수
     const callApi = useCallback(async () => {
-        const requestApi_real = requestApi.current;
+        const requestApi_real: any = requestApi.current;
         if (!requestApi_real) {
             console.warn("호출할 api 가 정의되지 않았습니다.");
             return;
@@ -33,7 +35,7 @@ const useAxios = (
 
         let data = null;
         let error = null;
-        let _apiResponse = null;
+        let _apiResponse: any = null;
         try {
             const apiResponse = await requestApi_real(body.current);
             /*
@@ -42,7 +44,7 @@ const useAxios = (
             */
             data = apiResponse.data;
             _apiResponse = apiResponse;
-        } catch (e) {
+        } catch (e: any) {
             error = e.response;
             // console.error("[Axios Error]: ", e);
         } finally {
@@ -57,7 +59,7 @@ const useAxios = (
 
     // 초기 api 호출 함수를 변경하는 용도
     const changeApi = useCallback(
-        (inputApi) => (requestApi.current = inputApi),
+        (inputApi: any) => (requestApi.current = inputApi),
         []
     );
 
