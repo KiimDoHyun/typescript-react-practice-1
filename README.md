@@ -21,3 +21,13 @@
 
 -   React + typescript + redux
 -   타입스크립트 환경에서 리덕스 적용 연습(기존 Redux 개념, 사용방법 복습)
+
+깃 커밋 데이터 조회
+조회 리스트 출력
+api
+`https://api.github.com/repos/KiimDoHyun/KiimDoHyun-portfolio_window/commits`
+
+Practice3
+
+-   타입스크립트 환경에서 api 처리
+-   api: Git commit
