@@ -34,6 +34,19 @@ const Practice3 = () => {
 
     실제 데이터를 다루는건 리스트 출력 영역에 해당한다.
     */
+
+    // 제네릭
+    useEffect(() => {
+        const myFunc = <T extends {}>(arg: T): void => {
+            console.log("arg: ", arg);
+        };
+
+        myFunc(1);
+        myFunc("hh");
+        myFunc(true);
+        myFunc([1, 2, 3, 4]);
+    }, []);
+
     return (
         <Practice3Box>
             {/* 조회 버튼 영역 */}
