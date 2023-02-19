@@ -6,6 +6,7 @@ import Page2Detail from "../Page/Page2Detail";
 import Practice1 from "../Page/Practice1";
 import Practice2 from "../Page/Practice2";
 import Practice3 from "../Page/Practice3";
+import Practice4 from "../Page/Practice4";
 
 const Router = () => {
     return (
@@ -18,6 +19,7 @@ const Router = () => {
                 <Route element={<Practice1 />} path="/Practice1" />
                 <Route element={<Practice2 />} path="/Practice2" />
                 <Route element={<Practice3 />} path="/Practice3" />
+                <Route element={<Practice4 />} path="/Practice4" />
             </Routes>
         </>
     );

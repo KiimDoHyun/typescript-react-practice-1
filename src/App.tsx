@@ -12,6 +12,7 @@ function App() {
                 <Link to={"/Practice1"}>Practice1</Link>
                 <Link to={"/Practice2"}>Practice2</Link>
                 <Link to={"/Practice3"}>Practice3</Link>
+                <Link to={"/Practice4"}>Practice4</Link>
             </header>
             <Router />
         </div>
